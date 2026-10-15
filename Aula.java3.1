@@ -1,0 +1,26 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class ExemploTabelaPreco {
+    public static void main(String[] args) {
+        // 1. Criando a tabela de preços (Chave: Nome do Produto, Valor: Preço)
+        Map<String, Double> tabelaPreco = new HashMap<>();
+
+        // 2. Adicionando alguns produtos
+        tabelaPreco.put("Notebook", 3500.00);
+        tabelaPreco.put("Smartphone", 1800.00);
+        tabelaPreco.put("Teclado", 150.00);
+
+        // 3. Definindo o produto que queremos buscar
+        String produtoBuscado = "Smartphone";
+
+        // 4. Usando o .containsKey() na estrutura condicional
+        if (tabelaPreco.containsKey(produtoBuscado)) {
+            // Se o produto existir, pegamos o preço dele com o .get()
+            double preco = tabelaPreco.get(produtoBuscado);
+            System.out.println("O preço de " + produtoBuscado + " é: R$ " + preco);
+        } else {
+            // Se não existir, tratamos o caso para evitar erros no sistema
+            System.out.println("Produto " + produtoBuscado + " não cadastrado na tabela.");
+        }
+    }
